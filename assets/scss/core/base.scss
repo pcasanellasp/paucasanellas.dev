@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+}
+
+input,
+select,
+textarea,
+button {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+body {
+  font-family: $body-font-family;
+  font-size: $body-font-size;
+  line-height: $body-line-height;
+  color: $gray-dark;
+  background-color: $white;
+}
+
+a {
+  color: $blue;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+b,
+strong {
+  font-weight: bold;
+}
