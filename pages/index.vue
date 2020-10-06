@@ -1,10 +1,7 @@
 <template>
   <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        paucasanellas.dev
-      </h1>
-    </div>
+    <h1 class="title">
+      paucasanellas.dev
+    </h1>
   </div>
 </template>
