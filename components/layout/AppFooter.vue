@@ -14,6 +14,7 @@ export default {
 
 <style>
   .AppFooter {
+    padding: 1rem 0;
     margin-top: 2rem;
   }
 </style>
