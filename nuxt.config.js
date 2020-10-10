@@ -1,10 +1,7 @@
 export default {
-  // Target (https://go.nuxtjs.dev/config-target)
-  target: 'static',
-
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    titleTemplate: '%s | paucasanellas.dev',
+    titleTemplate: '%s | Pau Casanellas Dev',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -19,6 +16,8 @@ export default {
   css: [
     '@/assets/scss/main'
   ],
+
+  loading: false,
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
@@ -39,18 +38,26 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/pwa
     // '@nuxtjs/pwa',
-    // https://go.nuxtjs.dev/content
-    '@nuxt/content'
+    // https://http.nuxtjs.org/
+    '@nuxt/http'
   ],
+
+  http: {
+    proxy: true
+  },
+
+  proxy: {
+    '/api/': {
+      target: 'http://localhost:3000',
+      pathRewrite: { '^/api/': '' }
+    }
+  },
 
   styleResources: {
     scss: [
       '@/assets/scss/_variables.scss'
     ]
   },
-
-  // Content module configuration (https://go.nuxtjs.dev/config-content)
-  content: {},
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
