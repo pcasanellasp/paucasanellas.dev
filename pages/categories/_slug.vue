@@ -1,10 +1,7 @@
 <template>
   <main class="page-home">
     <section class="container">
-      <h1>{{ article.title }}</h1>
-      <div class="content">
-        {{ article.content }}
-      </div>
+      <h1>{{ category.title }}</h1>
     </section>
   </main>
 </template>
@@ -13,15 +10,15 @@
 export default {
   async asyncData ({ $axios, params }) {
     const { slug } = params
-    const article = await $axios.$get('/api/articles/', { params: { slug } })
+    const category = await $axios.$get('/api/categories/', { params: { slug } })
     return {
-      article: article[0]
+      category: category[0]
     }
   },
   head () {
-    const { article } = this
+    const { category } = this
     return {
-      title: article.title
+      title: category.title
     }
   }
 }

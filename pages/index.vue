@@ -13,8 +13,8 @@
 
 <script>
 export default {
-  async asyncData ({ $http }) {
-    const articles = await $http.$get('/api/articles/')
+  async asyncData ({ $axios }) {
+    const articles = await $axios.$get('/api/articles/')
     return {
       articles
     }

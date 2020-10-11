@@ -8,7 +8,8 @@ export default {
       { hid: 'description', name: 'description', content: '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap' }
     ]
   },
 
@@ -38,19 +39,16 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/pwa
     // '@nuxtjs/pwa',
-    // https://http.nuxtjs.org/
-    '@nuxt/http'
+    // https://axios.nuxtjs.org/
+    '@nuxtjs/axios'
   ],
 
-  http: {
+  axios: {
     proxy: true
   },
 
   proxy: {
-    '/api/': {
-      target: 'http://localhost:3000',
-      pathRewrite: { '^/api/': '' }
-    }
+    '/api/': { target: 'http://localhost:3000/', pathRewrite: { '^/api/': '' } }
   },
 
   styleResources: {
