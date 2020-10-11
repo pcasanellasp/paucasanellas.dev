@@ -2,19 +2,19 @@
   <footer class="AppNavbar">
     <div class="container">
       <nuxt-link :to="{ name: 'index' }" class="AppNavbar__link">
-        <IconHomeOutline width="24" />
+        <IconHomeOutline width="20" />
         <p>Inicio</p>
       </nuxt-link>
       <nuxt-link :to="{ name: 'explore' }" class="AppNavbar__link">
-        <IconCompassOutline width="24" />
+        <IconCompassOutline width="20" />
         <p>Explorar</p>
       </nuxt-link>
       <nuxt-link :to="{ name: 'search' }" class="AppNavbar__link">
-        <IconSearchOutline width="24" />
+        <IconSearchOutline width="20" />
         <p>Buscar</p>
       </nuxt-link>
       <nuxt-link :to="{ name: 'admin' }" class="AppNavbar__link">
-        <IconPersonOutline width="24" />
+        <IconSettingsOutline width="20" />
         <p>Ajustes</p>
       </nuxt-link>
     </div>
@@ -41,7 +41,7 @@ export default {}
 
   &__link {
     display: block;
-    padding: 0.5rem 1rem;
+    padding: 0.25rem 1.25rem;
     padding-top: 1rem;
     transition: all 1s;
     border-bottom: 5px solid transparent;
@@ -49,7 +49,7 @@ export default {}
     color: $gray-400;
 
     p {
-      font-size: 0.85rem;
+      font-size: 0.75rem;
     }
 
     &:focus {
