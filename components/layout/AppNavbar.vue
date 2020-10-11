@@ -1,18 +1,20 @@
 <template>
-  <header class="AppNavbar">
+  <footer class="AppNavbar">
     <div class="container">
-      <div class="AppNavbar__section">
-        <nuxt-link :to="{ name: 'index' }" class="AppNavbar__link AppNavbar__logo">
-          paucasanellas.dev
-        </nuxt-link>
-      </div>
-      <nav class="AppNavbar__section">
-        <nuxt-link :to="{ name: 'index' }" class="AppNavbar__link">
-          Inicio
-        </nuxt-link>
-      </nav>
+      <nuxt-link :to="{ name: 'index' }" class="AppNavbar__link">
+        <IconHomeOutline width="24" />
+      </nuxt-link>
+      <nuxt-link :to="{ name: 'explore' }" class="AppNavbar__link">
+        <IconCompassOutline width="24" />
+      </nuxt-link>
+      <nuxt-link :to="{ name: 'search' }" class="AppNavbar__link">
+        <IconSearchOutline width="24" />
+      </nuxt-link>
+      <nuxt-link :to="{ name: 'admin' }" class="AppNavbar__link">
+        <IconPersonOutline width="24" />
+      </nuxt-link>
     </div>
-  </header>
+  </footer>
 </template>
 
 <script>
@@ -21,27 +23,37 @@ export default {}
 
 <style lang="scss">
 .AppNavbar {
-  margin-bottom: 2rem;
+  bottom: 0;
+  margin-top: 2rem;
+  position: fixed;
+  width: 100%;
 
   .container {
-    align-items: center;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+
   }
 
   &__link {
-    color: $gray-dark;
-    display: inline-block;
-    padding: 1rem;
+    display: block;
+    padding: 0.5rem 2rem;
+    padding-top: 1rem;
+    transition: all .5s;
+    border-bottom: 5px solid transparent;
 
-    &:hover {
-      text-decoration: none;
+    &.nuxt-link-exact-active {
+      border-bottom-color: $blue-400;
+      .icon {
+        color: $gray-800;
+        fill: $gray-800;
+      }
     }
   }
 
-  &__logo {
-    padding: 0;
+  .icon {
+    color: $gray-200;
+    fill: $gray-200;
   }
 }
 </style>

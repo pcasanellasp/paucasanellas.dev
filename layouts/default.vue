@@ -1,7 +1,13 @@
 <template>
   <div class="layout-default">
-    <AppNavbar />
+    <AppHeader />
     <Nuxt />
-    <AppFooter />
+    <AppNavbar />
   </div>
 </template>
+
+<style lang="scss">
+  .layout-default {
+    font-family: 'Poppins', sans-serif;
+  }
+</style>
