@@ -48,7 +48,8 @@ export default {
   },
 
   proxy: {
-    '/api/': { target: 'http://localhost:3000/', pathRewrite: { '^/api/': '' } }
+    '/api/': { target: 'http://localhost:3000/', pathRewrite: { '^/api/': '' } },
+    '/uploads/': { target: 'http://localhost:3000/uploads/', pathRewrite: { '^/uploads/': '' } }
   },
 
   styleResources: {
