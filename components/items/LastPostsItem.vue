@@ -1,5 +1,8 @@
 <template>
   <article class="LastPostItem">
+    <div v-if="article.private" class="LastPostItem__lock">
+      <IconLockOutline width="24" />
+    </div>
     <figure v-if="article.cover" class="LastPostItem__figure">
       <nuxt-link :to="{ name: 'articles-slug', params: { slug: article.slug } }">
         <img :src="article.cover.formats.thumbnail.url" :width="article.cover.formats.thumbnail.width">
@@ -45,13 +48,19 @@ export default {
     display: flex;
     align-items: center;
     margin-bottom: 2rem;
+    position: relative;
 
     &:hover {
       text-decoration: none;
     }
 
-    &__figure {
+    &__lock {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
 
+    &__figure {
       display: inline-block;
       margin-right: 1.5rem;
       max-width: 50%;
