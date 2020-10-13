@@ -22,6 +22,7 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
+    { src: './plugins/carousel', mode: 'client' }
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -32,7 +33,9 @@ export default {
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
     // https://github.com/nuxt-community/style-resources-module
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    // https://github.com/nuxt-community/moment-module
+    '@nuxtjs/moment'
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -56,6 +59,11 @@ export default {
     scss: [
       '@/assets/scss/_variables.scss'
     ]
+  },
+
+  moment: {
+    defaultLocale: 'es',
+    locales: ['es']
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
