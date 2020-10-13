@@ -13,7 +13,7 @@
     height="272"
     rx="48"
     ry="48"
-    fill="none"
+    fill="gold"
     stroke="currentColor"
     stroke-linecap="round"
     stroke-linejoin="round"

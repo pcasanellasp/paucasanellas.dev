@@ -18,7 +18,7 @@
         Cursos destacados
       </h3>
       <template slot="content">
-        <carousel :per-page="1" :autoplay="true">
+        <carousel :per-page-custom="[[320, 1],[720, 3]]" :autoplay="true">
           <slide v-for="article in articles" :key="article.title">
             <FeatureCourses :article="article" />
           </slide>

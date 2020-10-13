@@ -42,8 +42,8 @@ export default {
 
 <style lang="scss">
   .FeatureCourses {
-    padding: 1rem;
     position: relative;
+    margin-right: 1rem;
     &__figure {
       img {
         border-radius: 1rem;
@@ -58,8 +58,8 @@ export default {
       padding: 1rem;
       background-color: white;
       border-radius: 0.5rem;
-      width: calc(100% - 4rem);
-      left: 2rem;
+      width: calc(100% - 2rem);
+      left: 1rem;
     }
 
     &__title {
