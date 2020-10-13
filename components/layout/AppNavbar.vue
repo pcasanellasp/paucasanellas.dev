@@ -13,7 +13,7 @@
         <IconSearchOutline width="20" />
         <p>Buscar</p>
       </nuxt-link>
-      <nuxt-link :to="{ name: 'admin' }" class="AppNavbar__link">
+      <nuxt-link :to="{ name: 'settings' }" class="AppNavbar__link">
         <IconSettingsOutline width="20" />
         <p>Ajustes</p>
       </nuxt-link>
@@ -28,6 +28,7 @@ export default {}
 <style lang="scss">
 .AppNavbar {
   bottom: 0;
+  background-color: white;
   margin-top: 2rem;
   position: fixed;
   width: 100%;
