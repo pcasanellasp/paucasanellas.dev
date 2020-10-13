@@ -31,7 +31,7 @@ export default {
   },
   computed: {
     fromNow () {
-      return this.$moment(this.article.updatedAt).fromNow()
+      return this.$moment(this.article.createdAt).fromNow()
     },
     firstCategory () {
       return this.article.categories[0] || null
