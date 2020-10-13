@@ -1,6 +1,5 @@
 <template>
   <div class="layout-default">
-    <AppHeader />
     <Nuxt />
     <AppNavbar />
   </div>

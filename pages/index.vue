@@ -1,7 +1,11 @@
 <template>
   <main class="page-home">
+    <AppHeader>
+      <h1 slot="title" class="title">
+        paucasanellas.dev
+      </h1>
+    </AppHeader>
     <section class="container">
-      <h2>Últimos artículos 📝</h2>
       <article v-for="article in articles" :key="article.title">
         <nuxt-link :to="{ name: 'slug', params: { slug: article.slug } }">
           {{ article.title }}

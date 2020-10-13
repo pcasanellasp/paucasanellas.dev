@@ -2,15 +2,8 @@
   <header class="AppHeader">
     <div class="container">
       <div class="AppHeader__section">
-        <nuxt-link :to="{ name: 'index' }" class="AppHeader__link AppHeader__logo">
-          paucasanellas.dev
-        </nuxt-link>
+        <slot name="title" />
       </div>
-      <nav class="AppHeader__section">
-        <nuxt-link :to="{ name: 'index' }" class="AppHeader__link">
-          Inicio
-        </nuxt-link>
-      </nav>
     </div>
   </header>
 </template>
@@ -22,7 +15,7 @@ export default {}
 <style lang="scss">
 .AppHeader {
   margin-bottom: 2rem;
-
+  padding: 1.75rem 0;
   .container {
     align-items: center;
     display: flex;
@@ -30,18 +23,9 @@ export default {}
     justify-content: space-between;
   }
 
-  &__link {
-    color: $gray-dark;
-    display: inline-block;
-    padding: 1rem;
-
-    &:hover {
-      text-decoration: none;
-    }
-  }
-
-  &__logo {
-    padding: 0;
+  .title {
+    font-size: $h3-mobile;
+    font-weight: bold;
   }
 }
 </style>

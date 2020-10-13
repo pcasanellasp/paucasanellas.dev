@@ -1,12 +1,12 @@
 <template>
   <main class="page-explore">
+    <AppHeader>
+      <h1 slot="title" class="title">
+        Explorar
+      </h1>
+    </AppHeader>
     <section class="container">
-      <h2>Categorías</h2>
-      <article v-for="category in categories" :key="category.title">
-        <nuxt-link :to="{ name: 'categories-slug', params: { slug: category.slug } }">
-          {{ category.title }}
-        </nuxt-link>
-      </article>
+      <CategoryItem v-for="category in categories" :key="category.title" :category="category" />
     </section>
   </main>
 </template>
