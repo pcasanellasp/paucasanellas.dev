@@ -15,7 +15,7 @@ export default {}
 <style lang="scss">
 .AppHeader {
   margin-bottom: 2rem;
-  padding: 1.75rem 0;
+  padding: 1.25rem 0;
   .container {
     align-items: center;
     display: flex;
@@ -24,7 +24,6 @@ export default {}
   }
 
   .title {
-    font-size: $h3-mobile;
     font-weight: bold;
   }
 }

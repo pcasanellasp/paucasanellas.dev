@@ -1,24 +1,37 @@
 <template>
   <main class="page-home">
     <AppHeader>
-      <h1 slot="title" class="title">
-        paucasanellas.dev
+      <h1 slot="title">
+        Pau Casanellas
       </h1>
     </AppHeader>
-    <section class="container">
-      <article v-for="article in articles" :key="article.title">
-        <nuxt-link :to="{ name: 'slug', params: { slug: article.slug } }">
-          {{ article.title }}
-        </nuxt-link>
-      </article>
-    </section>
+    <SectionBlock to="articles">
+      <h3 slot="title">
+        Últimos artículos
+      </h3>
+      <template slot="content">
+        <LastPostsItem v-for="article in articles" :key="article.title" :article="article" />
+      </template>
+    </SectionBlock>
+    <SectionBlock to="articles">
+      <h3 slot="title">
+        Cursos destacados
+      </h3>
+      <template slot="content">
+        <carousel :per-page="1" :autoplay="true">
+          <slide v-for="article in articles" :key="article.title">
+            <FeatureCourses :article="article" />
+          </slide>
+        </carousel>
+      </template>
+    </SectionBlock>
   </main>
 </template>
 
 <script>
 export default {
   async asyncData ({ $axios }) {
-    const articles = await $axios.$get('/api/articles/')
+    const articles = await $axios.$get('/api/articles/', { params: { _limit: 5 } })
     return {
       articles
     }

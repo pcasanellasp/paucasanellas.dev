@@ -1,11 +1,8 @@
 <template>
-  <nuxt-link :to="{ name: 'categories-slug', params: { slug: category.slug } }" class="Category-item" :style="computedStyles">
-    <p class="Category-item__title">
+  <nuxt-link :to="{ name: 'categories-slug', params: { slug: category.slug } }" class="CategoryItem" :style="computedStyles">
+    <h3 class="CategoryItem__title">
       {{ category.title }}
-    </p>
-    <div v-if="category.cover">
-      {{ }}
-    </div>
+    </h3>
   </nuxt-link>
 </template>
 
@@ -29,7 +26,7 @@ export default {
 </script>
 
 <style lang="scss">
-.Category-item {
+.CategoryItem {
   padding: 4rem 2rem;
   display: block;
   border-radius: 1rem;
@@ -40,10 +37,6 @@ export default {
 
   &:hover {
     text-decoration: none;
-  }
-
-  &__title {
-    font-size: $h5-mobile;
   }
 }
 </style>

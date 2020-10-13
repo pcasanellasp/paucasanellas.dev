@@ -1,8 +1,10 @@
 <template>
-  <main class="page-home">
-    <section class="container">
-      <h1>{{ category.title }}</h1>
-    </section>
+  <main class="page-category">
+    <AppHeader>
+      <h1 slot="title">
+        {{ category.title }}
+      </h1>
+    </AppHeader>
   </main>
 </template>
 
