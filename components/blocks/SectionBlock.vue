@@ -4,7 +4,7 @@
       <slot name="title" />
       <slot name="content" />
       <p v-if="to" class="text-right">
-        <nuxt-link :to="{ name: 'articles'} ">
+        <nuxt-link :to="{ name: to } ">
           Ver más...
         </nuxt-link>
       </p>
