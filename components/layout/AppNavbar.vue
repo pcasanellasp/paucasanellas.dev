@@ -1,18 +1,24 @@
 <template>
-  <header class="AppNavbar">
+  <footer class="AppNavbar">
     <div class="container">
-      <div class="AppNavbar__section">
-        <nuxt-link :to="{ name: 'index' }" class="AppNavbar__link AppNavbar__logo">
-          paucasanellas.dev
-        </nuxt-link>
-      </div>
-      <nav class="AppNavbar__section">
-        <nuxt-link :to="{ name: 'index' }" class="AppNavbar__link">
-          Inicio
-        </nuxt-link>
-      </nav>
+      <nuxt-link :to="{ name: 'index' }" class="AppNavbar__link">
+        <IconHomeOutline width="20" />
+        <p>Inicio</p>
+      </nuxt-link>
+      <nuxt-link :to="{ name: 'explore' }" class="AppNavbar__link">
+        <IconCompassOutline width="20" />
+        <p>Explorar</p>
+      </nuxt-link>
+      <nuxt-link :to="{ name: 'search' }" class="AppNavbar__link">
+        <IconSearchOutline width="20" />
+        <p>Buscar</p>
+      </nuxt-link>
+      <nuxt-link :to="{ name: 'settings' }" class="AppNavbar__link">
+        <IconSettingsOutline width="20" />
+        <p>Ajustes</p>
+      </nuxt-link>
     </div>
-  </header>
+  </footer>
 </template>
 
 <script>
@@ -21,27 +27,49 @@ export default {}
 
 <style lang="scss">
 .AppNavbar {
-  margin-bottom: 2rem;
+  bottom: 0;
+  background-color: white;
+  margin-top: 2rem;
+  position: fixed;
+  width: 100%;
+  border-top: 1px solid $gray-200;
 
   .container {
-    align-items: center;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-wrap: nowrap;
+    justify-content: space-around;
   }
 
   &__link {
-    color: $gray-dark;
-    display: inline-block;
-    padding: 1rem;
+    display: block;
+    padding: 0.25rem 1.25rem;
+    padding-top: 1rem;
+    transition: all 1s;
+    border-bottom: 5px solid transparent;
+    text-align: center;
+    color: $gray-400;
 
-    &:hover {
+    p {
+      font-size: 0.75rem;
+    }
+
+    &:focus {
       text-decoration: none;
+      outline: 0;
+    }
+
+    &.nuxt-link-exact-active {
+      .icon,
+      p {
+        transition: all .5s;
+        color: $purple-400;
+        fill: $purple-400;
+      }
     }
   }
 
-  &__logo {
-    padding: 0;
+  .icon {
+    fill: $gray-400;
   }
 }
 </style>

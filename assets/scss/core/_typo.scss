@@ -1,0 +1,19 @@
+h1, h2 {
+  font-weight: bold; 
+}
+
+h3 {
+  font-weight: 300;
+}
+
+h1 {
+  font-size: $h1-mobile;
+}
+
+h2 {
+  font-size: $h2-mobile;
+}
+
+h3 {
+  font-size: $h3-mobile;
+}
