@@ -13,14 +13,14 @@
         <LastPostsItem v-for="article in articles" :key="article.title" :article="article" />
       </template>
     </SectionBlock>
-    <SectionBlock to="articles">
+    <SectionBlock to="courses">
       <h3 slot="title">
         Cursos destacados
       </h3>
       <template slot="content">
         <carousel :per-page-custom="[[320, 1],[720, 3]]" :autoplay="true">
-          <slide v-for="article in articles" :key="article.title">
-            <FeatureCourses :article="article" />
+          <slide v-for="course in courses" :key="course.title">
+            <FeatureCourses :course="course" />
           </slide>
         </carousel>
       </template>
@@ -32,8 +32,10 @@
 export default {
   async asyncData ({ $axios }) {
     const articles = await $axios.$get('/api/articles/', { params: { _limit: 5 } })
+    const courses = await $axios.$get('/api/courses/', { params: { _limit: 10, featured: true } })
     return {
-      articles
+      articles,
+      courses
     }
   },
   head () {

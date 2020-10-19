@@ -1,18 +1,18 @@
 <template>
   <article class="FeatureCourses">
-    <figure v-if="article.cover" class="FeatureCourses__figure">
-      <nuxt-link :to="{ name: 'articles-slug', params: { slug: article.slug } }">
-        <img :src="article.cover.formats.thumbnail.url" :width="article.cover.formats.thumbnail.width">
+    <figure v-if="course.cover" class="FeatureCourses__figure">
+      <nuxt-link :to="{ name: 'courses-slug', params: { slug: course.slug } }">
+        <img :src="course.cover.formats.thumbnail.url" :width="course.cover.formats.thumbnail.width">
       </nuxt-link>
     </figure>
     <div class="FeatureCourses__info">
-      <nuxt-link :to="{ name: 'articles-slug', params: { slug: article.slug } }" class="FeatureCourses__title">
-        {{ article.title }}
+      <nuxt-link :to="{ name: 'courses-slug', params: { slug: course.slug } }" class="FeatureCourses__title">
+        {{ course.title }}
       </nuxt-link>
       <p class="FeatureCourses__meta">
-        <nuxt-link v-if="firstCategory" :to="{ name: 'categories-slug', params: { slug: firstCategory.slug } }" :style="`color: ${firstCategory.color}`">
-          {{ firstCategory.title }}
-        </nuxt-link>
+        <span>
+          {{ course.level }}
+        </span>
         <span class="FeatureCourses__ago">
           {{ fromNow }}
         </span>
@@ -24,17 +24,14 @@
 <script>
 export default {
   props: {
-    article: {
+    course: {
       type: Object,
       required: true
     }
   },
   computed: {
     fromNow () {
-      return this.$moment(this.article.createdAt).fromNow()
-    },
-    firstCategory () {
-      return this.article.categories[0] || null
+      return this.$moment(this.course.createdAt).fromNow()
     }
   }
 }
